@@ -16,7 +16,8 @@ const keys = require('./config/keys')
 
 const app = express()
 
-mongoose.connect(process.env.mongoURI)
+// При деплое использовать process.env, а иначе keys (си. выше)
+mongoose.connect(keys.mongoURI)
     .then(() => console.log('MongoDB connected'))
     .catch(error => console.log('ERROR: ', error))
 

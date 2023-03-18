@@ -4,7 +4,9 @@
     module.exports = require('./keys.dev')
 }*/
 
-/*module.exports = {
+
+// При разработке - РАСКОММЕНТИРОВАТЬ!!!
+module.exports = {
     mongoURI: 'mongodb+srv://admin:admin@cluster0.swkdqse.mongodb.net/?retryWrites=true&w=majority',
     jwt: 'dev-jwt'
-}*/
+}

@@ -5,9 +5,10 @@ const User = mongoose.model('users')
 
 const keys = require('../config/keys')
 
+// При деплое использовать process.env, а иначе keys (си. выше)
 const options = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: process.env.jwt
+    secretOrKey: keys.jwt
 }
 
 module.exports = function (passport) {
