@@ -8,12 +8,12 @@
     "npm": "8.19.2"
   },
   "scripts": {
-    "prestart": "concurrently \"npm install\" \"cd client && client-install\" \"cd client && client-build\"",
-    "start": "concurrently \"node index.js\" \"cd client && client\"",
+    "prestart": "concurrently \"npm install\" \"cd client && npm install && npm run build\"",
+    "start": "concurrently \"node index.js\" \"cd client && npm start\"",
     "serve": "nodemon index.js",
     "client-install": "npm install",
     "client-build" : "npm run build",
-    "client": "npm run start",
+    "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run serve\" \"npm run client\""
   },
   "keywords": [],
