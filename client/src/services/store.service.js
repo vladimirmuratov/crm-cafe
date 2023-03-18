@@ -1,8 +1,8 @@
 import {create} from 'zustand'
 import {devtools} from 'zustand/middleware'
 import axios from 'axios'
-import {clearToken, getToken, setToken} from './localStorage.service'
-import {orderLimit} from '../config'
+import {clearToken, getToken, setToken} from './localStorage.service.js'
+import {orderLimit} from '../config.js'
 
 export const useStore = create(devtools((setState, getState) => ({
     isAuth: false,
