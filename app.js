@@ -16,7 +16,7 @@ const keys = require('./config/keys')
 
 const app = express()
 
-mongoose.connect(keys.mongoURI)
+mongoose.connect(process.env.mongoURI)
     .then(() => console.log('MongoDB connected'))
     .catch(error => console.log('ERROR: ', error))
 
@@ -35,7 +35,7 @@ app.use('/api/category', categoryRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/position', positionRoutes)
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build')))
 
     app.get('/*', (req, res) => {
