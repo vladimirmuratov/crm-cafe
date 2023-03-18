@@ -8,7 +8,7 @@
     "npm": "8.19.2"
   },
   "scripts": {
-    "build" : "vite build",
+    "build" : "npm run build --prefix client",
     "start": "concurrently \"node index.js\" \"npm run preview --prefix client\"",
     "serve": "nodemon index.js",
     "client-install": "npm install --prefix client",
